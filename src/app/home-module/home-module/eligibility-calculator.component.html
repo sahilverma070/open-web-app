@@ -1,0 +1,120 @@
+<div style="margin-top: 260px" class="row">
+  <div id="calculatedLoanBottom" class="col-6 calculartorBackground">
+    <h6 class="elegibilityCalculatorTop">Eligibility Calculator</h6>
+    <form
+      name="form"
+      #f="ngForm"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      novalidate
+    >
+      <div class="form-group">
+        <label for="monthlyIncome">Monthly Income</label>
+        <div>
+          <strong>{{ model.monthlyIncome }}</strong>
+        </div>
+        <input
+          type="range"
+          class="custom-range"
+          id="monthlyIncome"
+          name="monthlyIncome"
+          (change)="changeEvent()"
+          [min]="sliderRange?.minSalaryRange"
+          [max]="sliderRange?.maxSalaryRange"
+          [(ngModel)]="model.monthlyIncome"
+          #monthlyIncome="ngModel"
+          required
+        />
+        <div class="eligibilityCalculatorRanges">
+          <span> &#x20b9; 100000</span> <span> &#x20b9; 300000 </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="monthlyExpense">Monthly Expense</label>
+        <div>
+          <strong>{{ model.monthlyExpense }}</strong>
+        </div>
+        <input
+          type="range"
+          class="custom-range"
+          id="monthlyExpense"
+          name="monthlyExpense"
+          (change)="changeEvent()"
+          [min]="sliderRange?.minExpenseRange"
+          [max]="sliderRange?.maxExpenseRange"
+          [(ngModel)]="model.monthlyExpense"
+          #monthlyIncome="ngModel"
+          required
+        />
+        <div class="eligibilityCalculatorRanges">
+          <span> &#x20b9; 0</span> <span> &#x20b9; 100000 </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="repaymentTenure">Repayment Tenure</label><br />
+        <select
+          class="selectBoxEligibilityCalculator"
+          [(ngModel)]="model.repaymentTenure"
+          name="repaymentTenure"
+          id="repaymentTenure"
+          placeholder="select"
+          (change)="changeEvent()"
+          required
+        >
+          <option *ngFor="let i of repaymentTenure" [ngValue]="i.value">
+            {{ i.name }}
+          </option>
+        </select>
+      </div>
+      <div
+        class="custom-control custom-switch"
+        style="padding-left: 0px; display: flex; justify-content: space-between"
+      >
+        <span>Do you have any existing loans?</span>
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          name="existingLoans"
+          [(ngModel)]="model.existingLoans"
+          id="customSwitch1"
+          required
+        />
+        <label class="custom-control-label" for="customSwitch1"></label>
+      </div>
+      <div *ngIf="model.existingLoans" class="form-group margintop15px">
+        <label for="emi">Emi of existing loal (optional) </label><br />
+        <span class="currencyinput"
+          >&#x20b9;<input
+            type="number"
+            name="emiOfExistingLoan"
+            [(ngModel)]="model.emiOfExistingLoan"
+            id="emi"
+        /></span>
+      </div>
+      <hr *ngIf="model.existingLoans" style="margin-top: -8px" />
+    </form>
+  </div>
+  <div id="calculatedLoan">
+    <div style="margin-left: 50px; margin-top: 100px">
+      <strong style="opacity: 0.7; color: white">Loan Amount</strong>
+    </div>
+    <h4 style="margin-left: 50px">&#x20b9; {{ totalLoanAmount }}</h4>
+    <div class="margintop50px" style="margin-left: 50px; opacity: 0.7">
+      Your EMI will be
+    </div>
+    <h4 style="margin-left: 50px">&#x20b9; {{ totalEmi }}</h4>
+    <div style="margin-left: 50px" class="margintop15px">
+      <button
+        class="btn"
+        style="
+          color: #663399;
+          background-color: white;
+          border: 1px solid white;
+          border-radius: 16px;
+        "
+      >
+        Get Money
+      </button>
+    </div>
+  </div>
+</div>

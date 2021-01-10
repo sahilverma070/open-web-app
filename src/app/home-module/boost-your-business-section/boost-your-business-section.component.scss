@@ -1,0 +1,12 @@
+.boostBusinessBkg{
+    display: flex;
+    flex-flow: column;
+    margin-left: 13%;
+}
+.boostBusinessBkg:before{
+    content: "";
+    position: absolute;
+    background: #ffff url(../.../../../../assets/sol_wave_bg.svg) no-repeat center;
+    width: 100%;
+    z-index: -1;
+}

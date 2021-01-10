@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+$baseColor: #663399;
+.textColorBase {
+color: $baseColor;
+}
+@font-face{
+    font-family: "Montserrat";
+    src: local("Montserrat"),url(./assets/fonts/Montserrat-Regular.ttf) format("truetype");
+}
+* {
+     font-family: 'Montserrat';
+}
+.actionBtn {
+  background: #ffff url(./assets/outline_btn.svg) no-repeat center;
+}
+.btnCls {
+  padding: 8px 26px;
+  border-radius: 24px;
+  border: none;
+}
+.margintop15px {
+  margin-top: 15px;
+}
+.marginLeft90px {
+  margin-left: 90px;
+}
+.margintop50px {
+  margin-top: 50px;
+}

@@ -1,0 +1,73 @@
+.longMsgStyle {
+  display: inline-block;
+}
+.textMargin {
+  margin-top: 152px;
+  font-size: 40px;
+}
+.selectBoxEligibilityCalculator {
+  width: 100%;
+  border: solid 2px #e8ebf3;
+  padding: 8px;
+  border-radius: 8px;
+}
+.calculartorBackground{
+  border: 1px solid #E8EBF3;
+  border-radius: 8px;
+}
+.elegibilityCalculatorTop {
+  background-color: #E8EBF3;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+.eligibilityCalculatorRanges {
+  color: grey;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #663399;
+  background-color: #663399;
+}
+input[type="range"]::-webkit-slider-thumb {
+  background: #663399;
+}
+.currencyinput input {
+   border: 0;
+}
+#calculatedLoan {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  color: #FFFFFF;
+  justify-content: center;
+}
+#calculatedLoan::before {
+  content: "";
+  position: absolute;
+  background: #ffff url(../.../../../../assets/loanAmountBackground.svg) no-repeat center;
+  width: 100%;
+  height: 300px;
+  z-index: -1;
+  margin-left: 61px;
+  margin-top: 69px;
+}
+#calculatedLoanBottom::before {
+  content: "";
+  position: absolute;
+  background: #ffff url(../.../../../../assets/accounting_dots.svg) no-repeat center;
+  width: 100%;
+  height: 300px;
+  z-index: -1;
+  margin-left: 358px;
+  margin-top: 283px;
+}
+.btn {
+    padding: 8px 26px;
+    border-radius: 24px;
+    margin: 20px;
+    border: 2px solid #663399;
+  }
